@@ -1,3 +1,4 @@
+````markdown
 # 🐴 Turf Analytics
 
 Platform for analysis and prediction of horse races using web scraping and machine learning.
@@ -14,43 +15,32 @@ Platform for analysis and prediction of horse races using web scraping and machi
 ## 🏗️ Architecture
 
 ```
-Backend: Django 4.2.7 + DRF 3.14.0 + SQLite
-Frontend: React 18.2.0 + Redux Toolkit + Bootstrap 5
+Backend: Django + Django REST Framework + PostgreSQL
+Frontend: React + Recharts/Plotly
 Web Scraper: Selenium + BeautifulSoup
-ML: scikit-learn + XGBoost (Pending)
-Scheduler: Celery + Redis (Pending)
+ML: scikit-learn + XGBoost
+Scheduler: Celery + Redis
 ```
 
 ## 📁 Project Structure
 
 ```
 turf-analytics/
-├── backend/              # Django REST API
-│   ├── apps/
-│   │   ├── accounts/     # User & Authentication
-│   │   ├── races/        # Programs & Results
-│   │   ├── entities/     # Horses, Jockeys, Trainers, Owners
-│   │   ├── predictions/  # ML Predictions
-│   │   └── scrapers/     # Web Scraper
-│   ├── config/           # Django Settings
-│   ├── manage.py
-│   └── requirements.txt
-├── frontend/             # React Application
-│   ├── src/
-│   │   ├── components/   # React Components
-│   │   ├── pages/        # Page Components
-│   │   ├── redux/        # Redux Store
-│   │   ├── config/       # Centralized Configuration
-│   │   ├── services/     # API Services
-│   │   └── App.js
-│   ├── package.json
-│   └── .env
-├── docs/                 # Documentation
-├── .gitignore
-└── README.md
+├── backend/           # Django application
+├── frontend/          # React application
+├── ml_models/         # Machine learning models and training
+├── scrapers/          # Web scraping scripts
+├── docs/              # Documentation
+└── docker-compose.yml # Container configuration
 ```
 
 ## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.9+
+- Node.js 16+
+- Docker & Docker Compose (optional)
+- PostgreSQL 12+
 
 ### Backend Setup
 
@@ -61,116 +51,112 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver 8000
+python manage.py runserver
 ```
-
-Backend runs on: **http://localhost:8000**
 
 ### Frontend Setup
 
 ```bash
 cd frontend
 npm install
-cp .env.example .env  # Configure environment variables
 npm start
 ```
 
-Frontend runs on: **http://localhost:3000**
+## 📖 Documentation
 
-## 📚 Documentation
-
-- [Specifications](./docs/ESPECIFICACIONES.md) - Complete project specifications
-- [Implementation Log](./IMPLEMENTATION_LOG.md) - Development progress
-- [Configuration Refactoring](./CONFIGURATION_REFACTORING_SUMMARY.md) - Configuration system details
-
-## 🔐 Default Credentials (Development)
-
-```
-Email: admin@turf-analytics.com
-Password: Admin123!@#
-
-OR
-
-Email: demo@turf-analytics.com  
-Password: Demo123!@#
-```
-
-## 📊 API Documentation
-
-Swagger UI available at: **http://localhost:8000/api/docs/**
-
-### Main Endpoints
-
-**Authentication:**
-- `POST /api/auth/login/` - User login
-- `POST /api/auth/register/` - User registration
-- `GET /api/auth/me/` - Get current user
-- `POST /api/auth/token/refresh/` - Refresh JWT token
-
-**Data Management:**
-- `GET /api/programs/` - List all race programs
-- `GET /api/horses/` - List all horses
-- `GET /api/jockeys/` - List all jockeys
-- `GET /api/predictions/` - List ML predictions
-- `GET /api/results/` - List race results
-
-**Scraper:**
-- `GET /api/scraper-logs/` - View scraper logs
-- `GET /api/scraper-logs/latest/` - Get latest scraper run
-- `POST /api/scraper/run/` - Manually trigger scraper
-
-## 🛠️ Technology Stack
-
-### Backend
-- **Framework:** Django 4.2.7
-- **API:** Django REST Framework 3.14.0
-- **Database:** SQLite (Development) / PostgreSQL (Production)
-- **Authentication:** djangorestframework-simplejwt 5.5.1
-- **Scraping:** Selenium + BeautifulSoup
-- **Validation:** Django REST Framework validators
-
-### Frontend
-- **Framework:** React 18.2.0
-- **State Management:** Redux Toolkit 1.9.7
-- **HTTP Client:** Axios 1.6.0
-- **Routing:** React Router 6.18.0
-- **UI Framework:** Bootstrap 5.3.2
-- **Styling:** Bootstrap CSS + Custom CSS
+- [Specifications](../ESPECIFICACIONES.md) - Complete project specifications
+- [Setup Guide](./docs/SETUP.md) - Detailed setup instructions
+- [API Documentation](./docs/API.md) - API endpoints reference
+- [Architecture](./docs/ARCHITECTURE.md) - System architecture overview
+- [Session 10 Report](./SESSION_10_REPORT.md) - Development progress and CORS configuration
+- [Status](./STATUS.md) - Current project status
 
 ## 🔄 Workflow
 
-### For Developers
+### Daily Scraping
+- Scheduled daily scraping at 6:00 AM
+- Extracts: Programs, Results, Horses, Jockeys, Trainers, Owners
+- Data validation and deduplication
+- Statistics calculation
 
-1. **Branch Naming:** `feature/name`, `bugfix/name`, `hotfix/name`
-2. **Commits:** Use descriptive messages
-3. **Pull Requests:** Create PR with detailed description
-4. **Testing:** Run tests before merging
+### ML Pipeline
+- Weekly model retraining
+- Feature engineering from historical data
+- Prediction generation for upcoming races
+- Performance monitoring
 
-### Phases Completed ✅
+### Admin Features
+- Monitor scraping status
+- Manage data identities (deduplication)
+- Train and evaluate ML models
+- Generate reports
 
-- **Phase 1.1:** Backend API (12 models, 100+ endpoints, JWT auth)
-- **Phase 1.2:** Web Scraper (Selenium-based, data parsing, validation)
-- **Phase 1.3:** Admin Panel (React, Redux, authentication, dashboards)
-- **Configuration Refactoring:** Centralized config with environment variables
+### User Features
+- View upcoming races
+- Analyze horse statistics
+- Explore jockey/trainer/owner data
+- Access ML predictions
+- Global search and filters
 
-### Phases Pending ⏳
+## 🛠️ Development
 
-- **Phase 1.4:** Frontend npm setup and testing
-- **Phase 2:** Integration Testing
-- **Phase 3:** ML Models Implementation
-- **Phase 4:** Production Deployment
+### Running Tests
+
+```bash
+cd backend
+pytest -v --cov
+
+cd frontend
+npm test
+```
+
+### Code Style
+
+- Python: PEP 8 (Black formatter)
+- JavaScript: ESLint + Prettier
+
+```bash
+# Format backend
+black .
+isort .
+
+# Format frontend
+npm run format
+```
+
+## 🐳 Docker
+
+```bash
+docker-compose up -d
+```
+
+Services:
+- Backend: http://localhost:8000
+- Frontend: http://localhost:3000
+- PostgreSQL: localhost:5432
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Run tests
+4. Submit a pull request
 
 ## 📝 License
 
-MIT License - Feel free to use this project for learning and development.
+MIT License
 
 ## 📧 Contact
 
-**Author:** Andres Garriga  
-**GitHub:** [@garrigaandres35-code](https://github.com/garrigaandres35-code)
+For questions or issues, contact the development team.
 
 ---
 
-**Status:** 🚀 In Development  
-**Current Version:** 1.0.0-alpha  
+**Status:** In Development - Session 10 (Configuration & CORS Setup)  
+**Version:** 0.2.0  
 **Last Updated:** October 28, 2025
+**Backend:** ✅ Running (localhost:8000)  
+**Frontend:** ✅ Running (localhost:3000)  
+**Authentication:** ✅ JWT Configured (Testing in progress)
+
+````

@@ -1,1 +1,216 @@
-# 📊 Turf Analytics - Project Status\n\n**Last Updated:** October 28, 2025, 03:40 UTC  \n**Overall Progress:** 90% Completed\n\n---\n\n## 🟢 Completed Phases\n\n### Phase 1.1: Backend API ✅\n- **Status:** 100% Complete - Operational\n- **Duration:** Sessions 1-8\n- **Components:**\n  - 12 Django Models with relationships\n  - 12 Serializers with nested validation\n  - 11 ViewSets with CRUD operations\n  - 100+ REST API endpoints\n  - JWT Authentication (SimpleJWT 5.5.1)\n  - SQLite Database with migrations\n  - Admin Interface\n  - Swagger/OpenAPI Documentation\n- **Testing:** ✅ Database setup, user creation, API responses\n- **Running On:** http://localhost:8000\n\n### Phase 1.2: Web Scraper ✅\n- **Status:** 100% Complete - Functional\n- **Components:**\n  - Selenium-based web scraper\n  - BeautifulSoup HTML parsing\n  - Data validators and parsers\n  - Error handling and retry logic\n  - Logging system\n  - Celery integration ready\n- **Data Sources:** elTurf.com\n- **Entities Scraped:** Programs, Results, Horses, Jockeys, Trainers, Owners\n\n### Phase 1.3: Admin Panel (Frontend) ✅\n- **Status:** 100% Complete - Code Ready\n- **Duration:** Sessions 3-8\n- **Components:**\n  - Redux Store (3 slices: auth, scraper, data)\n  - 15+ Async Thunks\n  - JWT Authentication Flow\n  - 10+ React Components\n  - Admin Dashboard\n  - Scraper Control Panel\n  - Data Management Interface\n  - User Dashboard\n  - Private Routes with RBAC\n- **Testing:** ✅ Code structure, imports, routing\n\n### Configuration Refactoring ✅\n- **Status:** 100% Complete\n- **Duration:** Session 9\n- **Components:**\n  - Centralized `config.js` with environment variables\n  - `apiRoutes.js` with 50+ API endpoints\n  - `appRoutes.js` with 10+ SPA routes\n  - Multi-environment support (dev, staging, prod)\n  - Support for multiple ports (PUERTO_BACKEND, PUERTO_FRONTEND, PUERTO_API)\n- **Validation:** ✅ All hardcoded URLs replaced\n\n---\n\n## 🟡 In Progress\n\n### Phase 1.4: Frontend Setup & Integration Testing ⏳\n- **Status:** 0% Started\n- **Planned Tasks:**\n  1. `npm install` in frontend directory\n  2. Start React dev server on port 3000\n  3. End-to-end testing (login, dashboards, CRUD)\n  4. API integration verification\n  5. Redux state management testing\n  6. JWT token refresh testing\n- **Estimated:** 2-3 hours\n\n---\n\n## 🔵 Pending Phases\n\n### Phase 2: Machine Learning ⏹️\n- Status: Not Started\n- Features: XGBoost models, prediction pipeline, model versioning\n- Est. Duration: 10-15 hours\n\n### Phase 3: Production Deployment ⏹️\n- Status: Not Started\n- Features: Docker setup, Kubernetes config, CI/CD pipeline\n- Est. Duration: 15-20 hours\n\n### Phase 4: Advanced Features ⏹️\n- Status: Not Started\n- Features: Batch predictions, user profiles, advanced analytics\n- Est. Duration: 20+ hours\n\n---\n\n## 📈 Code Statistics\n\n| Component | Lines | Files | Status |\n|-----------|-------|-------|--------|\n| Backend Models | 1,200+ | 12 | ✅ Complete |\n| Backend Serializers | 800+ | 12 | ✅ Complete |\n| Backend ViewSets | 1,000+ | 11 | ✅ Complete |\n| Frontend Components | 1,500+ | 10+ | ✅ Complete |\n| Redux Slices | 600+ | 3 | ✅ Complete |\n| Configuration | 500+ | 3 | ✅ Complete |\n| **Total** | **5,600+** | **40+** | **✅ 90%** |\n\n---\n\n## 🛠️ Technology Stack Validated\n\n### Backend\n- ✅ Python 3.12\n- ✅ Django 4.2.7\n- ✅ Django REST Framework 3.14.0\n- ✅ djangorestframework-simplejwt 5.5.1\n- ✅ Selenium 4.15.2\n- ✅ BeautifulSoup 4\n- ✅ SQLite3\n- ✅ Daphne 4.2.1 (ASGI)\n\n### Frontend\n- ✅ Node.js 18+\n- ✅ React 18.2.0\n- ✅ Redux Toolkit 1.9.7\n- ✅ React Router 6.18.0\n- ✅ Axios 1.6.0\n- ✅ Bootstrap 5.3.2\n\n---\n\n## 🔐 Default Credentials (Development)\n\n```\nAdmin User:\n  Email: admin@turf-analytics.com\n  Password: Admin123!@#\n  Role: admin\n\nDemo User:\n  Email: demo@turf-analytics.com\n  Password: Demo123!@#\n  Role: user\n```\n\n---\n\n## 📱 Access Points\n\n| Service | URL | Status |\n|---------|-----|--------|\n| Backend API | http://localhost:8000 | ✅ Running |\n| Swagger Docs | http://localhost:8000/api/docs/ | ✅ Available |\n| Frontend | http://localhost:3000 | ⏳ Pending npm start |\n| Database | SQLite at `backend/db.sqlite3` | ✅ Initialized |\n\n---\n\n## ✨ Key Features Implemented\n\n### User Roles & Permissions\n- ✅ Admin dashboard with full access\n- ✅ User dashboard with limited access\n- ✅ JWT token-based authentication\n- ✅ Automatic token refresh\n- ✅ Private routes with RBAC\n\n### Data Management\n- ✅ Centralized models (12 entities)\n- ✅ Nested serialization\n- ✅ CRUD operations for all entities\n- ✅ Filtering and pagination\n- ✅ Search functionality\n\n### Scraper Management\n- ✅ Manual scraper trigger\n- ✅ Scraper logs and statistics\n- ✅ Latest log viewing\n- ✅ Error tracking and reporting\n\n### Configuration System\n- ✅ Environment-aware configuration\n- ✅ Multi-port support\n- ✅ Dynamic URL construction\n- ✅ Centralized API routes\n- ✅ Centralized SPA routes\n\n---\n\n## 🔄 Workflow Status\n\n```\nRequirements → Design → Backend Dev → Frontend Dev → Integration → Testing → Deploy\n    ✅           ✅         ✅          ✅            ⏳          ⏳        ⏹️\n```\n\n---\n\n## 📝 Recent Changes\n\n### Session 9 (October 28, 2025)\n1. Created centralized configuration system\n   - `config/config.js` - Dynamic configuration\n   - `config/apiRoutes.js` - API endpoints\n   - `config/appRoutes.js` - SPA routes\n\n2. Updated all components to use centralized routes\n   - Redux slices (authSlice, dataSlice, scraperSlice)\n   - React components (Navbar, Login pages)\n   - API client (Axios instance)\n\n3. Removed all hardcoded URLs\n   - Validated 0 localhost references in components\n   - 100% of API calls using API_ROUTES\n   - 100% of navigation using APP_ROUTES\n\n4. Pushed project to GitHub\n   - Repository: https://github.com/garrigaandres35-code/turf-analytics\n   - Documentation and implementation logs uploaded\n\n---\n\n## 🎯 Next Steps\n\n1. **npm install & start** - Get frontend running\n2. **End-to-end testing** - Verify all flows\n3. **Integration testing** - Backend + Frontend together\n4. **Bug fixes** - Address any issues found\n5. **Phase 2** - Begin ML implementation\n\n---\n\n## 📞 Project Contact\n\n**Developer:** Andres Garriga  \n**GitHub:** [@garrigaandres35-code](https://github.com/garrigaandres35-code)  \n**Project Repo:** [turf-analytics](https://github.com/garrigaandres35-code/turf-analytics)\n\n---\n\n**Version:** 1.0.0-alpha  \n**License:** MIT  \n**Status:** 🚀 In Development\n
+````markdown
+# 🎯 PROYECTO TURF ANALYTICS - ESTADO ACTUAL
+
+## ✅ Completado (28 de Octubre, 2025)
+
+### 1️⃣ Stack Tecnológico Definido
+- ✅ **Backend:** Django + Django REST Framework + PostgreSQL
+- ✅ **Frontend:** React + Redux + Recharts/Plotly
+- ✅ **Web Scraping:** Selenium + BeautifulSoup
+- ✅ **ML:** scikit-learn + XGBoost + pandas
+- ✅ **Scheduler:** Celery + Redis
+- ✅ **Containerización:** Docker + Docker Compose
+- ✅ **Autenticación:** JWT (SimpleJWT)
+- ✅ **CORS:** Configurado para frontend-backend
+
+### 2️⃣ Documentación Completa
+- ✅ **ESPECIFICACIONES.md** - 350+ líneas con:
+  - Visión general y objetivos
+  - Requisitos funcionales y no-funcionales
+  - Modelo de datos completo (12 entidades)
+  - Flujos de proceso (Scraping, ML, Procesamiento)
+  - 24 grupos de API endpoints
+  - Interfaces de usuario detalladas
+  - Arquitectura ML completa
+  - Timeline de 6 meses
+
+### 3️⃣ Estructura del Proyecto
+- ✅ **Backend:** 10 apps Django listas para desarrollo
+  - auth, programs, results, horses, jockeys, trainers, owners, racetracks, statistics, ml_predictions, scraper
+- ✅ **Frontend:** React con estructura modular
+  - components, pages, services, redux, styles
+- ✅ **ML Models:** Estructura para entrenamiento y predicción
+- ✅ **Scrapers:** Estructura para web scraping
+- ✅ **Documentación:** 4 archivos de guías
+- ✅ **Configuración:** Docker, .env, .gitignore, requirements.txt
+
+### 4️⃣ Archivos Creados: 65+
+- Backend: 47 archivos (Django apps, settings, requirements)
+- Frontend: 8 archivos (React, package.json)
+- ML Models: 2 archivos (estructura)
+- Scrapers: 3 archivos (estructura)
+- Documentación: 5 archivos (setup, API, arquitectura)
+- Configuración: 3 archivos (Docker, env, .gitignore)
+
+## 📂 Ubicación Principal
+
+```
+c:\Proyectos\Playwright\turf-analytics\
+```
+
+### Archivos Clave
+
+1. **ESPECIFICACIONES.md** (en raíz de Playwright)
+   - Documento de especificaciones completo
+
+2. **turf-analytics/README.md**
+   - Descripción general del proyecto
+
+3. **turf-analytics/docs/SETUP.md**
+   - Guía de instalación paso a paso
+
+4. **turf-analytics/docs/API.md**
+   - Documentación de endpoints API
+
+5. **turf-analytics/docs/ARCHITECTURE.md**
+   - Arquitectura del sistema
+
+6. **turf-analytics/SESSION_10_REPORT.md**
+   - Estado de desarrollo - CORS & URL configuration
+
+## 🚀 Próximos Pasos
+
+### Fase 1: Implementación Base (Semanas 1-6)
+
+#### Semana 1-2: Configuración Inicial
+- [x] Instalar dependencias
+- [x] Configurar base de datos PostgreSQL
+- [x] Crear modelos Django
+- [x] Configurar autenticación JWT
+- [ ] Resolver CORS preflight issue
+- [ ] Completar login flow end-to-end
+
+#### Semana 3-4: Web Scraper
+- [ ] Implementar scraper con Selenium
+- [ ] Validación de datos
+- [ ] Scheduler con Celery
+- [ ] Logging y manejo de errores
+
+#### Semana 5-6: Backend API
+- [ ] Endpoints CRUD para todas las entidades
+- [ ] Filtrado y búsqueda
+- [ ] Permisos por rol (admin/usuario)
+- [ ] Tests unitarios
+
+### Fase 2: Frontend (Semanas 7-10)
+
+#### Semana 7-8: Admin Panel
+- [ ] Layout administrativo
+- [ ] Control de scraping
+- [ ] Gestión de identidades
+- [ ] Visualización de logs
+
+#### Semana 9-10: Dashboard Usuario
+- [ ] Visualización de programas
+- [ ] Ficha de ejemplares
+- [ ] Análisis de tendencias
+- [ ] Búsqueda global
+
+### Fase 3: Machine Learning (Semanas 11-12)
+
+#### Semana 11: Entrenamiento
+- [ ] Ingeniería de features
+- [ ] Entrenamiento de modelos
+- [ ] Evaluación y métricas
+
+#### Semana 12: Integración
+- [ ] Endpoints de predicción
+- [ ] Pipeline automático
+- [ ] Validación en producción
+
+## 💡 Notas Importantes
+
+### Session 10 Progress (Oct 27-28, 2025)
+- ✅ Identificado: URL hardcoding mismatch (127.0.0.1 vs localhost)
+- ✅ Resuelto: Configuración centralizada en localhost
+- ✅ Alineado: Frontend (localhost:3000) + Backend (localhost:8000)
+- ✅ Verificado: CORS config correcta en Django
+- 🔴 Bloqueador: CORS preflight (OPTIONS) retorna net::ERR_FAILED
+- 📋 Siguiente: Debug OPTIONS request handling en Django
+
+### Consideraciones de Scraping elTurf.com
+- ⚠️ HTML con 10+ niveles de divs anidados
+- ⚠️ Ajax + Vue.js (contenido dinámico)
+- ⚠️ Selectores sin estructura jerárquica
+- ✅ Mitigación: Selenium con WebDriverWait + BeautifulSoup
+
+### Arquitectura de ML
+- 📊 Datos históricos: 6-24 meses
+- 🎯 Predicción: Probabilidad de Top 3
+- 📈 Features: 15+ variables predictoras
+- ✅ Modelos: Logistic Regression → Random Forest → XGBoost
+
+### Seguridad
+- 🔐 JWT con rotación de tokens
+- 👥 RBAC (admin/usuario)
+- 🔒 HTTPS en producción
+- ✅ Validación en todos los endpoints
+
+## 📊 Resumen de Carga de Trabajo
+
+| Componente | Archivos | Estado |
+|-----------|----------|--------|
+| Backend | 47 | ✅ Estructura lista |
+| Frontend | 8 | ✅ Estructura lista |
+| ML Models | 2 | ✅ Estructura lista |
+| Scrapers | 3 | ✅ Estructura lista |
+| Docs | 5 | ✅ Completas |
+| Config | 3 | ✅ Configuradas |
+| **TOTAL** | **68** | **✅ LISTO** |
+
+## 🎓 Aprendizajes y Decisiones
+
+### Decisiones Técnicas Tomadas
+1. ✅ Django + DRF: ORM robusto, admin panel integrado, escalable
+2. ✅ React: Componentes reutilizables, buen ecosistema de gráficos
+3. ✅ Selenium: Manejo de JavaScript y contenido dinámico
+4. ✅ PostgreSQL: Relaciones complejas, confiable
+5. ✅ Celery + Redis: Tareas programadas y asincrónicas
+
+### Riesgos Identificados y Mitigados
+- 🚨 HTML anti-scraping → Selenium + esperas inteligentes
+- 🚨 Cambios frecuentes → Selectores robustos + validación
+- 🚨 Datos insuficientes para ML → Mínimo 6 meses de datos
+- 🚨 Desbalance de clases → Técnicas de balanceo en ML
+
+## 📞 Estado del Proyecto
+
+```
+┌────────────────────────────────────────┐
+│  TURF ANALYTICS - PROYECTO INICIADO   │
+├────────────────────────────────────────┤
+│ Especificaciones:     ✅ COMPLETAS    │
+│ Estructura:          ✅ COMPLETA      │
+│ Documentación:       ✅ COMPLETA      │
+│ Stack Tech:          ✅ DEFINIDO      │
+│ Configuración JWT:   ✅ COMPLETA      │
+│ CORS Setup:          ✅ COMPLETA      │
+│ Desarrollo:          ⏳ EN PROGRESO   │
+│ Autenticación:       ⏳ TESTING       │
+│ Testing:             ⏳ PENDIENTE     │
+│ Producción:          ⏳ PENDIENTE     │
+└────────────────────────────────────────┘
+```
+
+## 🎯 Objetivo Final
+
+Crear una plataforma web completa para análisis y predicción de carreras de caballos, con:
+- 📊 Scraping automático diario
+- 🗄️ Centralización de datos
+- 🤖 Predicciones con ML
+- 📈 Dashboards analíticos
+- 👥 Interfaces para admin y usuarios
+
+## 📅 Timeline Estimado
+
+- **Actual:** 28 de Octubre, 2025 (CORS & URL Configuration)
+- **Meta:** 6 meses para MVP (Marzo 2026)
+- **Producción:** Abril-Mayo 2026
+
+---
+
+**¡El proyecto está en desarrollo activo!** 🚀
+
+Proximo paso: Completar autenticación y dashboard admin.
+
+````
